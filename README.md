@@ -9,4 +9,4 @@ Docker
 ```
 
 ## How to run
-nothing yet as theres no code yet ig
+nothing yet, check back later
