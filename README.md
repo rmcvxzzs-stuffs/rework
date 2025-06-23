@@ -1,5 +1,6 @@
 # Horizon
-[Discord Badge](https://dcbadge.limes.pink/api/https://discord.gg/yW9b4Y2vb9/)
+![Discord Banner 2](https://discordapp.com/api/guilds/https://discord.gg/yW9b4Y2vb9/widget.png?style=banner2)
+
 source code for horizon planet, a littlebigplanet karting server revival project
 
 ## dependencies:
