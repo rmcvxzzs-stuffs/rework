@@ -9,3 +9,9 @@ services:
       - .env
     volumes:
       - .:/app
+    depends_on:
+      - postgres
+
+  postgres"
+    image: postgres:15
+    environment:      
