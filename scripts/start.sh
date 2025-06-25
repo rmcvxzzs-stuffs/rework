@@ -1,8 +1,8 @@
 #!/bin/bash
-
+# TO MAKE IT EXECUTABLE, RUN "chmod +x start-server.sh" 
 while true; do
     echo "=== Horizon Server ===" # menu
-    echo "PLEASE DO NOTE: DO NOT RUN THE SERVER, CODE IS ABSENT AS I DID NOT CODED IT BEFORE. THIS IS JUST A TESTING." # lulz
+    echo "DO NOT RUN THE SERVER, CODE IS ABSENT AS I DID NOT CODED IT BEFORE. THIS IS JUST A TESTING." # lulz
     echo "1) Start server" # would execute "docker compose up"
     echo "2) Exit" # exits
     read -p "Choose an option [1-2]: " choice
