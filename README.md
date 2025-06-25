@@ -12,3 +12,4 @@ Docker
 
 ## How to run
 nothing yet, check back later
+### PLEASE DO NOTE: DO NOT RUN START.SH ON SCRIPT FOLDER. ITS JUST A TESTING.
