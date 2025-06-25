@@ -1,5 +1,5 @@
 # Horizon
-![Discord Banner 2](https://discordapp.com/api/guilds/1355105253074407524/widget.png?style=banner2)
+![Discord Banner 2](https://discordapp.com/api/guilds/1355105253074407524/widget.png?style=banner2) ![Static Badge](https://img.shields.io/badge/Powered%20by-Docker-blue.svg)
 
 source code for horizon planet, a littlebigplanet karting server revival project
 
