@@ -1,1 +1,1 @@
-// now its postgres.
+// now its supabase.
