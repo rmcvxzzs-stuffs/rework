@@ -1,7 +1,8 @@
 # Horizon
 ![Static Badge](https://img.shields.io/badge/Powered%20by-Docker-blue.svg) ![Discord](https://img.shields.io/discord/1355105253074407524)
 
-source code for horizon planet, a littlebigplanet karting server revival project
+source code for horizon planet, a littlebigplanet karting server revival project.
+
 supposedly, horizon planet is more of a golang rewrite for [TinyKart.](https://github.com/AutumnRivers/TinyKart)
 
 ## dependencies:
