@@ -1,5 +1,5 @@
 # Horizon
-![Static Badge](https://img.shields.io/badge/Powered%20by-Docker-blue.svg) ![Discord](https://img.shields.io/discord/1355105253074407524)
+![Static Badge](https://img.shields.io/badge/Powered%20by-Docker-blue.svg) 
 
 source code for horizon planet, a littlebigplanet karting server revival project.
 
