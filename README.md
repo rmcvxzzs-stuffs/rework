@@ -1,8 +1,8 @@
-# ReWork
+# ReWork (previously Horizon)
 ![Static Badge](https://img.shields.io/badge/Powered%20by-Docker-blue.svg) [![MySQL](https://img.shields.io/badge/MySQL-4479A1?logo=mysql&logoColor=fff)](#)
-source code for horizon planet, a littlebigplanet karting server revival project.
+source code for rework, a littlebigplanet karting server revival project.
 
-supposedly, horizon planet is more of a golang rewrite for [TinyKart.](https://github.com/AutumnRivers/TinyKart)
+supposedly, ReWork is its own server and is not a rewrite of anything.
 
 ## dependencies:
 ```
