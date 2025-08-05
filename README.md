@@ -1,5 +1,5 @@
 # ReWork
-![Static Badge](https://img.shields.io/badge/Powered%20by-Docker-blue.svg) 
+![Static Badge](https://img.shields.io/badge/Powered%20by-Docker-blue.svg) ![Go](https://img.shields.io/badge/go-%2300ADD8.svg?style=for-the-badge&logo=go&logoColor=white)
 
 source code for horizon planet, a littlebigplanet karting server revival project.
 
@@ -14,5 +14,4 @@ Docker
 
 ## How to run
 nothing yet, check back later
-### PLEASE DO NOTE: DO NOT RUN START.SH ON SCRIPT FOLDER. ITS JUST A TESTING.
-[![forthebadge](https://forthebadge.com/images/featured/featured-built-with-love.svg)](https://forthebadge.com)
+### dont run start.sh on scripts folder yet
