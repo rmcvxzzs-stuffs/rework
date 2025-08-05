@@ -1,4 +1,4 @@
-# Horizon
+# ReWork
 ![Static Badge](https://img.shields.io/badge/Powered%20by-Docker-blue.svg) 
 
 source code for horizon planet, a littlebigplanet karting server revival project.
