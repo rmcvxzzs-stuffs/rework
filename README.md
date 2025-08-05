@@ -1,6 +1,5 @@
 # ReWork
-![Static Badge](https://img.shields.io/badge/Powered%20by-Docker-blue.svg) ![Go](https://img.shields.io/badge/go-%2300ADD8.svg?style=for-the-badge&logo=go&logoColor=white)
-
+![Static Badge](https://img.shields.io/badge/Powered%20by-Docker-blue.svg) [![MySQL](https://img.shields.io/badge/MySQL-4479A1?logo=mysql&logoColor=fff)](#)
 source code for horizon planet, a littlebigplanet karting server revival project.
 
 supposedly, horizon planet is more of a golang rewrite for [TinyKart.](https://github.com/AutumnRivers/TinyKart)
