@@ -1,3 +1,4 @@
+# run 'chmod +x announce.sh' first!
 #!/bin/sh
 
 # Prompt user for input
