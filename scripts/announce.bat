@@ -1,4 +1,4 @@
-# dont make an announcement yet
+:: dont make an announcement yet
 curl -X POST http://localhost:8080/announcements \
      -H "Content-Type: application/json" \
      -H "X-Admin-Token: [replace]" \
