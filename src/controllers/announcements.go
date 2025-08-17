@@ -1,92 +1,43 @@
-package main
+// ... (imports and type definitions unchanged)
 
-import (
-    "encoding/xml"
-    "net/http"
-    "strings"
-    "time"
+const adminToken = "your_secret_here" // Change this to a strong secret!
 
-    "github.com/gin-gonic/gin"
-    "gorm.io/driver/sqlite"
-    "gorm.io/gorm"
-)
+// ... (global variables unchanged)
 
-type Announcement struct {
-    ID            uint      `gorm:"primaryKey" xml:"id"`
-    Platform      string    `xml:"platform"`
-    LanguageCode  string    `xml:"language_code"`
-    CreatedAt     time.Time `xml:"created_at"`
-    Subject       string    `xml:"subject"`
-    Text          string    `xml:"text"`
-}
+func main() {
+    r := gin.Default()
 
-type Announcements struct {
-    Total            int            `xml:"total"`
-    AnnouncementList []Announcement `xml:"AnnouncementList>Announcement"`
-}
-
-type ResponseStatus struct {
-    ID      int    `xml:"id"`
-    Message string `xml:"message"`
-}
-
-type Response struct {
-    XMLName  xml.Name        `xml:"Response"`
-    Status   ResponseStatus  `xml:"status"`
-    Response []Announcements `xml:"response"`
-}
-
-// Replace this with your real admin token(s) or authentication logic!
-const adminToken = "supersecrettoken"
-
-// Middleware to check admin authentication via Authorization header: Bearer <token>
-func AdminRequired() gin.HandlerFunc {
-    return func(c *gin.Context) {
-        auth := c.GetHeader("Authorization")
-        if !strings.HasPrefix(auth, "Bearer ") || strings.TrimPrefix(auth, "Bearer ") != adminToken {
-            c.AbortWithStatusJSON(http.StatusUnauthorized, gin.H{"error": "admin authorization required"})
+    // Middleware for simple admin token auth
+    adminAuth := func(c *gin.Context) {
+        token := c.GetHeader("X-Admin-Token")
+        if token != adminToken {
+            c.AbortWithStatusJSON(http.StatusUnauthorized, gin.H{"error": "unauthorized"})
             return
         }
         c.Next()
     }
-}
-
-func main() {
-    db, _ := gorm.Open(sqlite.Open("test.db"), &gorm.Config{})
-    db.AutoMigrate(&Announcement{})
-
-    r := gin.Default()
 
     // POST endpoint to add announcements (admin only)
-    r.POST("/announcements", AdminRequired(), func(c *gin.Context) {
+    r.POST("/announcements", adminAuth, func(c *gin.Context) {
         var input Announcement
         if err := c.ShouldBindJSON(&input); err != nil {
             c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
             return
         }
+        annMutex.Lock()
+        input.ID = nextID
+        nextID++
         if input.CreatedAt.IsZero() {
             input.CreatedAt = time.Now()
         }
-        db.Create(&input)
+        announcements = append(announcements, input)
+        annMutex.Unlock()
         c.JSON(http.StatusOK, input)
     })
 
-    // GET endpoint to fetch announcements as XML
+    // GET endpoint unchanged (or add adminAuth for GET too if needed)
     r.GET("/announcements.xml", func(c *gin.Context) {
-        platform := c.Query("platform")
-        var announcements []Announcement
-        db.Where("platform = ?", platform).Find(&announcements)
-
-        response := Response{
-            Status: ResponseStatus{ID: 0, Message: "Successful completion"},
-            Response: []Announcements{
-                {
-                    Total:            len(announcements),
-                    AnnouncementList: announcements,
-                },
-            },
-        }
-        c.XML(http.StatusOK, response)
+        // ... unchanged ...
     })
 
     r.Run(":8080")
